@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>ADDIS FORTUNE -- CONTENT MATTERS Clock</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link href="file:///G:/all/www/web_issue_202/archive/html40.css" rel="stylesheet" type="text/css">
+</head>
+
+<body body onLoad="goforit()"  background="bg_tile.jpg" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table width="273" border="0" cellpadding="0" cellspacing="0" height="21">
+  <!--DWLayoutTable-->
+  <tr>
+    <td valign="top" width="227">&nbsp;&nbsp; 
+      <script language="">
+var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+
+function getthedate(){
+var mydate=new Date()
+var year=mydate.getYear()
+if (year < 1000)
+year+=1900
+var day=mydate.getDay()
+var month=mydate.getMonth()
+var daym=mydate.getDate()
+if (daym<10)
+daym="0"+daym
+var hours=mydate.getHours()
+var minutes=mydate.getMinutes()
+var seconds=mydate.getSeconds()
+var dn="AM"
+if (hours>=12)
+dn="PM"
+if (hours>12){
+hours=hours-12
+}
+if (hours==0)
+hours=12
+if (minutes<=9)
+minutes="0"+minutes
+if (seconds<=9)
+seconds="0"+seconds
+//change font size here
+var cdate="<font size='-2'><font color='#CC3300' face='Arial'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+" </b></font></font>"
+if (document.all)
+document.all.clock.innerHTML=cdate
+else if (document.getElementById)
+document.getElementById("clock").innerHTML=cdate
+else
+document.write(cdate)
+}
+if (!document.all&&!document.getElementById)
+getthedate()
+function goforit(){
+if (document.all||document.getElementById)
+setInterval("getthedate()",1000)
+}
+
+    </script> <span id="clock"></span></td>
+  	<td height="21" width="46"></td>
+	</tr>
+</table>
+<table width="680" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="680" height="1"></td>
+  </tr>
+</table>
+</body>
+</html>
+
