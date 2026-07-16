@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from config import HTML_ARCHIVE_DIR
 from parser import parse_html_file
-from storage import save_article, article_exists, init_database
+from storage import save_article, article_exists
 from utils import scan_archive, get_relative_path
 
 
@@ -31,10 +31,6 @@ def run_scraper(
         incremental: If True, skip previously imported files (default behavior)
     """
     print(f"Scanning archive directory: {HTML_ARCHIVE_DIR}")
-    
-    # Initialize database tables (only if not dry_run and not output_file)
-    if not dry_run and not output_file:
-        init_database()
     
     # Get all article files
     article_files = scan_archive()
