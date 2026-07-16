@@ -37,7 +37,7 @@ A full-stack system for extracting, storing, and displaying posts from local HTM
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/abeni-al7/post_manager
 cd post_manager
 ```
 
