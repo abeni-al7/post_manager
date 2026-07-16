@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .fortune-card {
+    @apply bg-white border border-fortune-border rounded-sm;
+  }
+  .fortune-btn {
+    @apply px-4 py-2 bg-fortune-maroon text-white font-bold text-sm font-headline hover:bg-red-900 transition-colors rounded;
+  }
+}
